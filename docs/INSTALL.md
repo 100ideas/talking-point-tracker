@@ -30,10 +30,13 @@ createuser tpt -P
 Setting up this project:
 
 ```
-yarn install
+# yarn install
+npm install
 cp .env.template .env && vi .env
-sequelize db:migrate
-yarn start
+# sequelize db:migrate
+npm run migrate
+# yarn start
+npm run start
 ```
 
 After you finish these steps, it probably won't actually work, but this is better than no documentation, right?
