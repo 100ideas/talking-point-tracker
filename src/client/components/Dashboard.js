@@ -170,7 +170,10 @@ class Dashboard extends React.Component {
 
             return (
               <StyledTranscriptAreaWrapper>
-                <LiveTranscript sentences={data.sentences} />
+                <LiveTranscript
+                  sentences={data.sentences}
+                  activeEntity={activeEntity}
+                />
               </StyledTranscriptAreaWrapper>
             )
           }}

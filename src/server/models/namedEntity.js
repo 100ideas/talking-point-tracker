@@ -12,12 +12,17 @@ module.exports = (sequelize, DataTypes) => {
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      field: 'created_at',
+      field: 'created_at'
     },
     updatedAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      field: 'updated_at',
+      field: 'updated_at'
+    },
+    sentenceId: {
+      allowNull: true,
+      type: DataTypes.INTEGER,
+      field: 'sentence_id'
     },
   }, {
     tableName: 'named_entities',

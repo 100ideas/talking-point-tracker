@@ -71,19 +71,37 @@ function getSentences(words) {
 async function processSentence(content) {
   const sentence = await getTruecase(content)
   const ents = await getEntities(sentence)
+  console.log("================================\n\ngot sentance:")
+  console.log("\t" + sentence)
+  console.log(`\ngot ents[${ents.length}]:`)
+  ents.map(e => console.log("\t" + JSON.stringify(e)))
+  console.log("\n")
 
   // Save the sentence
   const storedSentence = await models.Sentence.create({
     content: cleanContent(sentence),
   })
+  console.log(`\n\nstored sentance <${storedSentence.id}>:`)
+  console.log("\t" + JSON.stringify(storedSentence))
 
   // Save the entities
-  ents.map(ent => models.NamedEntity.create({
-    entity: sentence.substring(ent.start, ent.end),
-    type: ent.label,
-    sentence_id: storedSentence.id,
-    model: 'en_core_web_lg',
-  }))
+  // let _ents = ents.map(ent =>
+  //   models.NamedEntity.create({
+  //     entity: sentence.substring(ent.start, ent.end),
+  //     type: ent.label,
+  //     sentence_id: storedSentence.id,
+  //     model: 'en_core_web_lg'
+  //   })
+  // )
+
+  console.log(`\n\nstored ents[${ents.length}]:`)
+  ents.forEach(ent => models.NamedEntity.create({
+      entity: sentence.substring(ent.start, ent.end),
+      type: ent.label,
+      sentence_id: storedSentence.id,
+      model: 'en_core_web_lg'
+    }).then(succ => console.log("\n" + JSON.stringify(succ,null,2)))
+  );
 }
 
 function newWord(word) {

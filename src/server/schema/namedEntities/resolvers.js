@@ -27,9 +27,14 @@ export async function getNamedEntities(parentValue, args) {
         as: 'NamedEntities',
         model: models.NamedEntity,
         required: true,
-        where: {
-          entity: args.relatedTo,
-        },
+        // where: {
+        //   entity: args.relatedTo,
+        // },
+        where: [{
+          entity: {
+            [Sequelize.Op.eq]: args.relatedTo,
+          },
+        }],        
       }],
     })
   }
