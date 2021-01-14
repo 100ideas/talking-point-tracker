@@ -26,10 +26,14 @@ const ALL_ENTITIES_QUERY = gql`
 `
 
 const RECENT_SENTENCES_QUERY = gql`
-  query RECENT_SENTENCES_QUERY($after: String!) {
+  query RECENT_SENTENCES_QUERY(
+    $after: String!,
+    $relatedTo: String) {
     sentences (
       after: $after
+      relatedTo: $relatedTo
     ) {
+      id
       content
       createdAt
     }
@@ -156,7 +160,11 @@ class Dashboard extends React.Component {
         </Query>
         <Query
           query={RECENT_SENTENCES_QUERY}
-          variables={{ after: moment().subtract(15, 'minutes').toISOString() }}
+          // query={ALL_ENTITIES_QUERY}
+          variables={{
+            after: moment().subtract(15, 'minutes').toISOString(),
+            relatedTo: activeEntity 
+          }}
           // variables={{ after: moment().subtract(5, 'minutes').toISOString() }}
           // pollInterval={2000}
         >
