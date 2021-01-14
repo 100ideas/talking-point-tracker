@@ -162,8 +162,9 @@ class Dashboard extends React.Component {
           query={RECENT_SENTENCES_QUERY}
           // query={ALL_ENTITIES_QUERY}
           variables={{
-            after: moment().subtract(15, 'minutes').toISOString(),
-            relatedTo: activeEntity 
+            after: moment().subtract(60, 'minutes').toISOString(),
+            // after: moment().subtract(120, 'minutes').toISOString(),
+            relatedTo: activeEntity
           }}
           // variables={{ after: moment().subtract(5, 'minutes').toISOString() }}
           // pollInterval={2000}
