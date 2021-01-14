@@ -1,4 +1,4 @@
-
+```fish
 # nooo - not compatible w/ 2.7
 torchy:~/d/j/2/talking-point-tracker on master
 $ python2 -m virtualenv .venv2
@@ -191,3 +191,4 @@ Using environment "development".
 (.venv3)
 torchy:~/d/j/2/talking-point-tracker on master
 (.venv3) $
+```

@@ -51,7 +51,9 @@
     "build": "babel src -d lib",
     "lint": "./node_modules/.bin/eslint 'src/**/*.js'",
     "test": "",
-    "migrate": "sequelize db:migrate",
+    "db:migrate": "sequelize db:migrate",
+    "db:start": "pg_ctl -D db start",
+    "db:stop": "pg_ctl -D db stop",
     "start-nodey": "nodemon --watch src --exec yarn babel-node -- src/server/index.js",
     "starty": "concurrently 'yarn start-nlp' 'yarn start-node' 'yarn parcel:dev'"
   },

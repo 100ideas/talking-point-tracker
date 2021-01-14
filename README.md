@@ -22,6 +22,8 @@ Also merged in a PR from the original repo that introduced experimental graph re
 - json and pdf serialization of a given transcript
 - integrate with other scrapers to allow for arbitrary fetching of transcripts from c-span
 - perhaps add `webvdd` package to consume the `srt` or `vdd` subtitle/caption files `youtube-dl` can fetch from youtube
+- also see
+  - https://source.opennews.org/articles/how-npr-transcribes-and-fact-checks-debates-live/
 
 ---
 
