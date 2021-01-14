@@ -72,7 +72,7 @@ class Dashboard extends React.Component {
             after: intervalScope.startTime,
             before: intervalScope.endTime,
           }}
-          pollInterval={20000}
+          pollInterval={1000 * 70}
         >
           {({ data, error, loading }) => {
             if (loading) {
@@ -167,7 +167,7 @@ class Dashboard extends React.Component {
             relatedTo: activeEntity
           }}
           // variables={{ after: moment().subtract(5, 'minutes').toISOString() }}
-          // pollInterval={2000}
+          pollInterval={1000 * 60}
         >
           {({ data, error, loading }) => {
             if (loading) {

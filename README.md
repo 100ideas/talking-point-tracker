@@ -4,6 +4,27 @@ Bad Idea Factory is proud to present the talking point tracker, a tool that watc
 
 This project leverages [Opened Captions](https://github.com/slifty/opened-captions), a project that exposes TV captions in real time for programmers to use in non-consumptive applications.
 
+---
+
+## [*100ideas's very hacky fork*](https://github.com/100ideas/talking-point-tracker)
+
+![2021_screenshot_with_graph](docs/2021-01-13_screenshot_100ideas.png)
+
+This year I've found myself wishing I had easy access to full transcripts of congressional hearings and speeches, realistically via scraping and parsing some closed captioning feed somewhere (c-span). I want to be able to search, skim, and also automatically clean, typeset and markup the transcripts so they are easy to share on social media in normal page-sized screenshots.
+
+I found this interesting project and tried to fire 'er up on a lark. I got it working in this fork, although I had to change minor versions of a few deps to make it all work with older node (11 lts).
+
+Also merged in a PR from the original repo that introduced experimental graph rendering and took a quick shot at fixing missing `sentence_id`s caused by postgres/sequelize/graphql/apollo crap that I honestly didn't want to get too deep into. So the demo work, after installing spacey.
+
+**todo**
+- drop a line in the main repo to say hello to the original devs
+- maybe dockerize everything, and switch to sqlite3 for simplicty
+- json and pdf serialization of a given transcript
+- integrate with other scrapers to allow for arbitrary fetching of transcripts from c-span
+- perhaps add `webvdd` package to consume the `srt` or `vdd` subtitle/caption files `youtube-dl` can fetch from youtube
+
+---
+
 ## Technologies
 
 This project requires Python 3 and node.  The project is written in node, but the NLP magic is all from the spaCy project (which is python).
