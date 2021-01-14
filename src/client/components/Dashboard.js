@@ -68,6 +68,7 @@ class Dashboard extends React.Component {
             after: intervalScope.startTime,
             before: intervalScope.endTime,
           }}
+          pollInterval={20000}
         >
           {({ data, error, loading }) => {
             if (loading) {
@@ -155,7 +156,9 @@ class Dashboard extends React.Component {
         </Query>
         <Query
           query={RECENT_SENTENCES_QUERY}
-          variables={{ after: moment().subtract(5, 'minutes').toISOString() }}
+          variables={{ after: moment().subtract(15, 'minutes').toISOString() }}
+          // variables={{ after: moment().subtract(5, 'minutes').toISOString() }}
+          // pollInterval={2000}
         >
           {({ data, error, loading }) => {
             if (loading) {

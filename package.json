@@ -52,10 +52,8 @@
     "lint": "./node_modules/.bin/eslint 'src/**/*.js'",
     "test": "",
     "migrate": "sequelize db:migrate",
-
     "start-nodey": "nodemon --watch src --exec yarn babel-node -- src/server/index.js",
     "starty": "concurrently 'yarn start-nlp' 'yarn start-node' 'yarn parcel:dev'"
-
   },
   "devDependencies": {
     "@babel/core": "7.1.2",

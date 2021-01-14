@@ -13,10 +13,11 @@ class Transcript extends React.Component {
   }
 
   state = {
-    expanded: false,
+    // expanded: false,
+    expanded: true,
   }
 
-  actionBar = false
+  actionBar = true
 
   toggleExpansion = () => {
     let { expanded } = this.state
@@ -129,7 +130,7 @@ const StyledTranscript = styled.div`
       border-top: 4px solid black;
     }
   }
-  
+
   .sentences {
     grid-area: sentences;
     display: flex;
